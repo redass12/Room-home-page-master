@@ -1,138 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
 :root {
-    --primaryColor: #fff;
-  }
-  /* var(--navColor1); */
-
-  *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Spartan;
-  }
-
-  body,html{
-      width: 100%;
-      height: 100%;
-      font-size: 12px;
-  }
-
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+  
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan',
+    sans-serif;
+    box-sizing: border-box;
+}
 .container {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     position: relative;
 }
 
-nav{
-    width: 60%;
-    display: flex;
-    position: absolute; 
-    z-index: 1;
-}
-
-.burger{
-    margin-top: 50px;
-    margin-left: 20px;
-    display: none;
-    position: relative;
-}
-
-nav input{
+nav {
     position: absolute;
-    top: 50px;
-    left: 20px;
+    width: 100%;
+    text-align: center;
     z-index: 2;
-    width: 30px;
-    height: 30px;
-    opacity: 0;
+}
+.logo {
+    margin-top: 50px;
 }
 
-.logo{
-    padding : 50px;
-    position: absolute;
-}
-
-.navigation-item {
-    display: flex;
-    padding: 50px;
-    font-size: 12px;
-    color : var(--primaryColor);
-    margin-left: 150px;
-}
-
-.navigation-item li {
-    list-style: none;
-    padding: 0 20px;
-}
-
-.sliders{
+.sliders {
     position: relative;
-    height: 70%;
-    background-color: rgb(161, 212, 42);
+    width: 100vw;
+    height: 100vh;
 }
 
 .slider {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    position: absolute;
+    height: 100vh;
     display: none;
-    position: absolute; 
-    /* display: flex; */
-    background-color: rgb(55, 76, 194);
+    opacity: 0;
 }
 
-.active{
+.active {
+    display: block;
     opacity: 1;
-    display: flex;
 }
 
-.slider-img{
-    background-color: rgb(32, 224, 176);
-    width:60%;
-    height: 100%;
-    background-size: cover;
+.slider-img {
+    width: 100%;
 }
 
-.slider-text{
-    width : 40%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content:center;
-    /* align-self:  space-between; */
-    padding: 0 70px 0 70px;
-    overflow: hidden;
+.slider-text {
+    margin: 16px;
 }
 
-.slider-text h1{
-    font-size: 3.5rem;
-    color:  hsl(0, 0%, 0%)
+.slider-text h2 {
+    color: var(--black);
 }
 
 .slider-text p {
-    padding: 30px 0;
-    color:  hsl(0, 0%, 63%);
-    line-height: 2rem;
+    color: var(--dark-gray);
+    margin-top: 10px;
+    font-size: .8em;
 }
 
 .shop {
     display: flex;
-    align-self: flex-start;
-    justify-content: center;
-    align-items : center;
     text-decoration: none;
+    margin: 28px 0;
 }
 
-.shop span{
+.shop span {
     display: inline;
-    color: hsl(0, 0%, 27%);
-    font-size: 12px;
+    color: var(--black);
+    font-size: .7em;
     text-transform: uppercase;
     letter-spacing: 10px;
     margin-right: 10px;
+}
+.about {
+    width: 100%;
+}
+
+.about img {
+    width: 100%;
+}
+
+.about-text {
+    padding: 16px;
+}
+
+.about-text p {
+    color: var(--dark-gray);
+    font-size: .8em;
+    margin-top: 10px;
 }
 
 .btn-next-prev{
@@ -141,9 +105,9 @@ nav input{
     background-color: aqua;
     position: absolute;
     z-index: 10;
-    left: 60%;
-    bottom: 0;
-    width: 130px;
+    right: 0;
+    bottom: 46%;
+    width: 144px;
     height: 70px;
 }
 
@@ -159,74 +123,101 @@ nav input{
     outline: 0;
 }
 
+/* Media query big screens */
 
-/* About our product */
+@media screen and (min-width:1440px) {
 
-.about{
-    width: 100%;
-    height: 30%;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.4fr;
-}
-
-.text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 50px 0 50px;
-}
-
-.text p{
-    margin: 15px 0 15px 0;
-    color: hsl(0, 0%, 63%);
-    line-height: 2rem;
-}
-
-.text h3 {
-    color: hsl(0, 0%, 0%);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-}
-
-.about-dark{
-    background: url('./images/image-about-dark.jpg') no-repeat center center / cover;
-}
-.about-light{
-    background: url('./images/image-about-light.jpg') no-repeat center center / cover;
-}
-
-
-/* Media qurery */
-
-/* Small screens , laptops */
-
-@media (max-width:1024px){
-    .navigation-item{
-        background-color: #fff;
-        color: hsl(0, 0%, 0%);
-        transform: translateX(-180%);
-        transform-origin: left;
-        transition: transform 300ms ease-in;
-        margin: 0;
-    }
-    .burger{
-        display: block;
-    }
-    nav input:checked ~ .navigation-item {
-        transform: translateX(0);
-        transform-origin: left;
-        transition: transform 300ms ease-in;
-        position: relative;
-        left: -1px;
+    .sliders {
+        height: 70vh;
     }
 
-    nav img {
-        margin: auto;
+    .slider {
+        height: 100%;
+        width: 100%;
     }
 
+    .active {
+        display: flex;
+    }
+
+    .slider-img {
+        width: 295%;
+        height: 100%;
+        object-fit: cover;
+        flex-grow: 3;
+    }
+
+    .slider-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 80px;
+        flex-grow: 1;
+    }
+
+    .slider-text h2 {
+        font-size: 2em;
+    }
+
+    .slider-text p {
+        font-size: 0.8em;
+        font-weight: 500;
+        margin: 10px 0;
+        line-height: 21px;
+    }
+
+    .shop {
+        margin: 12px 0;
+    }
+.shop span {
+    font-size: 0.8em;
+    color: var(--very-dark-gray);
+    font-weight: 500;
+    }
+
+    .btn-next-prev {
+        left: 62%;
+        bottom: 0;
+    }
+
+    nav {
+        text-align: left;
+    }
 
     .logo {
-        left: 30%;
+        margin: 60px 30px;
     }
-   
+
+    .about {
+        display: flex;
+        height: 30vh;
+    }
+.about-text {
+    flex-grow: 1;
+    width: 866px;
+    padding: 50px;
+    }
+.about-text h3 {
+    font-size: .9em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    }
+
+    .about-text p {
+        font-size: 0.8em;
+        font-weight: 500;
+        margin: 10px 0;
+        line-height: 21px;
+    }
+
+    .light {
+        flex-grow: 2;
+        object-fit: cover;
+    }
+
+    #img2 {
+        width: auto;
+        height: auto;
+    }
+
 }
